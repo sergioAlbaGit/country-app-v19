@@ -31,15 +31,41 @@
           {{ country.capital }}
         </td>
         <td>
-          {{ country.population }}
+          <span class="badge badge-error">
+            {{ country.population | number }}
+          </span>
         </td>
         <td>
-          <a class="link-primary text-orange-400 cursor-pointer"
+          <a
+            [routerLink]="['/country/by', country.cca2]"
+            class="link-primary text-orange-400 cursor-pointer"
             >Más información</a
           >
         </td>
       </tr>
 
+      }
+      <!--  -->
+      @if (errorMessage()) {
+      <tr>
+        <td colspan="8" class="text-center">
+          {{ errorMessage() }}
+        </td>
+      </tr>
+      }
+      <!--  -->
+      @if (countries().length === 0 && !isLoadingg() ) {
+      <tr>
+        <td colspan="8" class="text-center text-amber-500">
+          No hay paises que mostrar
+        </td>
+      </tr>
+      }
+      <!--  -->
+      @if (isLoadingg()) {
+      <tr>
+        <td colspan="8" class="text-center">Buscando paises</td>
+      </tr>
       }
     </tbody>
   </table>
