@@ -11,6 +11,11 @@ export class CountryMapper {
       flagSvg:    item.flags.svg,
       name:       item.translations['spa'].common ?? 'No spanish name',
       population: item.population,
+      borders:    item.borders?.join(' - ') ?? 'No tiene paises colindantes',
+      timezones:  item.timezones.join(' - '),
+      continents: item.continents.join(' - '),
+      region:     item.region,
+      subregion:  item.subregion
 
     }
   }

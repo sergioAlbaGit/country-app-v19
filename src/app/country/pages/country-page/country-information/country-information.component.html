@@ -1,0 +1,59 @@
+<section class="stats shadow flex flex-1">
+  <div class="stat place-items-center">
+    <div class="stat-title text-xl">Población</div>
+    <div class="stat-value text-gray-400">
+      {{ country().population | number }}
+    </div>
+    <div class="stat-desc text-sm">Desde {{ currentYear() }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title text-xl">País</div>
+    <div class="stat-value text-secondary">{{ country().name }}</div>
+    <div class="stat-desc text-sm">{{ country().capital }}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title text-xl">Continente</div>
+    <div class="stat-value text-gray-400">{{ country().continents }}</div>
+    <div class="stat-desc text-sm"></div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title text-xl">Sub región</div>
+    <div class="stat-value text-gray-400">{{ country().subregion }}</div>
+    <div class="stat-desc text-sm text-gray-400">{{ country().region }}</div>
+  </div>
+</section>
+
+<section class="mx-10 m-2">
+  <div class="flex w-auto flex-col gap-4">
+    <div class="flex items-center gap-4">
+      <div class="flex flex-col gap-4 my-3">
+        <div class="skeleton h-1/4 w-1/4 shrink-0 rounded-3xl overflow-hidden">
+          <img
+            class="w-auto h-auto"
+            [src]="country().flagSvg"
+            alt="Imagen del país"
+          /><img />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mx-10 m-2">
+  <div class="flex w-auto flex-col gap-4">
+    <div class="skeleton flex flex-col h-auto p-2 mb-2 max-w-fit">
+      <h2 class="sm:text-sm md:text-xl lg:text-2xl text-indigo-400">
+        Paises colindantes:
+        {{ country().borders }}
+      </h2>
+      <hr class="my-3 border-orange-500 w-2/3 self-center" />
+      <h2 class="sm:text-sm md:text-xl lg:text-2xl text-indigo-400">
+        Zona(s) horaria(s):
+        {{ country().timezones }}
+      </h2>
+    </div>
+  </div>
+</section>
