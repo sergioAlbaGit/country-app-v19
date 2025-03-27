@@ -5,7 +5,7 @@ export class CountryMapper {
 
   static mapRestCountryToCountry(item: RESTCountry): Country{
     return {
-      capital:    item.capital.join(','),
+      capital:    item.capital?.join(','),
       cca2:       item.cca2,
       flag:       item.flag,
       flagSvg:    item.flags.svg,
