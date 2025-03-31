@@ -19,7 +19,7 @@ export class CountryService {
   private queryCacheCountry = new Map<string, Country[]>()
   private queryCacheRegion = new Map<Region, Country[]>()
 
-  searchByCaptital( query: string ): Observable<Country[]>{
+  searchByCapital( query: string ): Observable<Country[]>{
     console.log(this.queryCacheCapital)
     query = query.toLowerCase();
 
