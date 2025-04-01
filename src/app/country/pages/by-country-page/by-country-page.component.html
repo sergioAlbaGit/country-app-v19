@@ -1,7 +1,6 @@
 <country-search-input
   placeholderInput="Buscar por país"
   (valueOutput)="query.set($event)"
-  [debounceTime]="600"
   [initialValue]="query()"
 ></country-search-input>
 

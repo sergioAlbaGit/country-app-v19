@@ -45,7 +45,6 @@ export class CountryService {
 
 
   searchByCountry( query: string ): Observable<Country[]>{
-    console.log(this.queryCacheCountry)
     query = query.toLowerCase();
     if( this.queryCacheCountry.has(query)){
       return of( this.queryCacheCountry.get(query) ?? []
@@ -55,7 +54,7 @@ export class CountryService {
     .pipe(
       map((resp) => CountryMapper.mapRestCountryToCountryArray(resp)),
       tap((countries) =>  this.queryCacheCountry.set(query, countries)),
-      delay(1000),
+      delay(2000),
       catchError(error => {
         console.log( "Error fetching" ,error);
 
