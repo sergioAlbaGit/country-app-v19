@@ -4,10 +4,10 @@
 <h3 class="text-lg">Seleccione una región</h3>
 
 <section class="row mt-2">
-  <div class="flex-col">
+  <div class="flex-row">
     @for (region of regions; track region) {
     <button
-      class="btn btn-outline mr-2 w-[100] rounded-xl"
+      class="btn btn-outline mb-2 mr-2 w-[100] rounded-xl"
       (click)="selectRegion(region)"
       [class.border-orange-500]="selectedRegion() === region"
     >
